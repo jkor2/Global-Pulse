@@ -3,4 +3,4 @@ Global Pulse is an open-source real-time trend intelligence engine that scrapes 
 
 
   s 
-     s.     
+     s.         
