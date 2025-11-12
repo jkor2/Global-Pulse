@@ -1,0 +1,36 @@
+version: "3.9"
+
+services:
+  api:
+    build: ./infrastructure/docker/api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./app:/app
+    depends_on:
+      - chromadb
+      - redpanda
+
+  redpanda:
+    image: redpandadata/redpanda:latest
+    command: >
+      redpanda start
+      --overprovisioned
+      --smp 1
+      --memory 1G
+      --reserve-memory 0M
+      --node-id 0
+      --check=false
+    ports:
+      - "9092:9092"
+
+  chromadb:
+    image: chromadb/chroma:latest
+    volumes:
+      - ./data/chroma:/chroma
+
+  ray-head:
+    image: rayproject/ray:latest
+    command: ["ray", "start", "--head", "--port=6379"]
+    ports:
+      - "8265:8265"
