@@ -1,0 +1,1 @@
+print("Sentiment worker started.")
