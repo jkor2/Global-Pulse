@@ -4,11 +4,9 @@ requests
 beautifulsoup4
 feedparser
 pydantic
-chroma-hnswlib
-sentence-transformers
-scikit-learn
-ray
 pandas
 numpy
 pytest
 streamlit
+transformers
+torch
