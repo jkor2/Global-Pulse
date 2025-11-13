@@ -2,35 +2,66 @@ version: "3.9"
 
 services:
   api:
-    build: ./infrastructure/docker/api
-    ports:
-      - "8000:8000"
+    container_name: globalpulse_api
+    build:
+      context: .
+      dockerfile: infrastructure/docker/api.Dockerfile
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
     volumes:
-      - ./app:/app
+      - .:/code
+    env_file:
+      - .env
+    ports:
+      - "8001:8000"
     depends_on:
-      - chromadb
-      - redpanda
+      - db
+      - redis
 
-  redpanda:
-    image: redpandadata/redpanda:latest
-    command: >
-      redpanda start
-      --overprovisioned
-      --smp 1
-      --memory 1G
-      --reserve-memory 0M
-      --node-id 0
-      --check=false
-    ports:
-      - "9092:9092"
-
-  chromadb:
-    image: chromadb/chroma:latest
+  worker:
+    container_name: globalpulse_worker
+    build:
+      context: .
+      dockerfile: infrastructure/docker/worker.Dockerfile
+    command: python app/workers/sentiment_worker.py
     volumes:
-      - ./data/chroma:/chroma
+      - .:/code
+    env_file:
+      - .env
+    depends_on:
+      - db
+      - redis
+    restart: always
 
-  ray-head:
-    image: rayproject/ray:latest
-    command: ["ray", "start", "--head", "--port=6379"]
+  dashboard:
+    container_name: globalpulse_dashboard
+    build:
+      context: .
+      dockerfile: infrastructure/docker/dashboard.Dockerfile
+    command: streamlit run dashboards/streamlit_app.py --server.port=8501 --server.address=0.0.0.0
+    volumes:
+      - .:/code
     ports:
-      - "8265:8265"
+      - "8501:8501"
+    env_file:
+      - .env
+
+  db:
+    image: postgres:15
+    container_name: globalpulse_db
+    environment:
+      POSTGRES_USER: gp_user
+      POSTGRES_PASSWORD: gp_password
+      POSTGRES_DB: gp_db
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7
+    container_name: globalpulse_redis
+    ports:
+      - "6379:6379"
+
+volumes:
+  postgres_data:

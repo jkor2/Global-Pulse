@@ -7,8 +7,8 @@ pydantic
 chroma-hnswlib
 sentence-transformers
 scikit-learn
-hdbscan
 ray
 pandas
 numpy
 pytest
+streamlit
