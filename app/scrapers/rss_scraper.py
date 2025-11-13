@@ -26,17 +26,18 @@ def parse_published(entry) -> datetime | None:
     return None
 
 
-def scrape_rss():
+def scrape_rss(custom_feeds=None):
     """
     Scrape all starter RSS feeds, insert new articles into the DB,
     and return a list of new Article objects.
     """
+
+    feeds = custom_feeds or RSS_FEEDS
     db = SessionLocal()
     new_articles = []
 
     try:
-        for category, feed_urls in RSS_FEEDS.items():
-
+        for category, feed_urls in feeds.items():
             for url in feed_urls:
                 try:
                     feed = feedparser.parse(url)
