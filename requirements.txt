@@ -10,3 +10,7 @@ pytest
 streamlit
 transformers
 torch
+sqlalchemy
+psycopg2-binary
+redis
+feedparser
