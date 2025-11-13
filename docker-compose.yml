@@ -12,10 +12,13 @@ services:
     env_file:
       - .env
     ports:
-      - "8001:8000"
+      - "8000:8000"
     depends_on:
       - db
       - redis
+    environment:
+      DATABASE_URL: ${DATABASE_URL}
+      REDIS_URL: ${REDIS_URL}
 
   worker:
     container_name: globalpulse_worker
@@ -49,9 +52,9 @@ services:
     image: postgres:15
     container_name: globalpulse_db
     environment:
-      POSTGRES_USER: gp_user
-      POSTGRES_PASSWORD: gp_password
-      POSTGRES_DB: gp_db
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
     ports:
       - "5433:5432"
     volumes:
