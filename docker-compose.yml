@@ -34,6 +34,21 @@ services:
       - db
       - redis
     restart: always
+  
+  rss_worker:
+    container_name: globalpulse_rss_worker
+    build:
+      context: .
+      dockerfile: infrastructure/docker/worker.Dockerfile
+    command: python app/workers/rss_worker.py
+    volumes:
+      - .:/code
+    env_file:
+      - .env
+    depends_on:
+      - db
+      - redis
+    restart: always
 
   dashboard:
     container_name: globalpulse_dashboard
