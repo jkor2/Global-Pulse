@@ -14,14 +14,14 @@ API_BASE = "http://api:8000"
 # -------------------------------------------------------
 st.set_page_config(
     page_title="GlobalPulse Analytics",
-    page_icon="🌍",
+    page_icon="",
     layout="wide"
 )
 
 # -------------------------------------------------------
 # Sidebar Navigation + Date Filters
 # -------------------------------------------------------
-st.sidebar.title("📊 Dashboard Navigation")
+st.sidebar.title("Dashboard Navigation")
 
 page = st.sidebar.radio("Go to", [
     "Overview",
@@ -32,7 +32,7 @@ page = st.sidebar.radio("Go to", [
 ])
 
 st.sidebar.markdown("---")
-st.sidebar.subheader("📅 Date Range")
+st.sidebar.subheader("Date Range")
 
 range_type = st.sidebar.selectbox(
     "Select Range",
@@ -112,7 +112,7 @@ def stat_card(label, value, color):
 # -------------------------------------------------------
 # MAIN TITLE
 # -------------------------------------------------------
-st.title("🌍 GlobalPulse — Analytics Dashboard")
+st.title("GlobalPulse — Analytics Dashboard")
 st.markdown("### Real-time insights from global news: sentiment, keywords, sources, and entities.")
 
 # -------------------------------------------------------
@@ -121,7 +121,7 @@ st.markdown("### Real-time insights from global news: sentiment, keywords, sourc
 
 # ------------------ OVERVIEW ------------------
 if page == "Overview":
-    st.subheader("📈 Sentiment Overview")
+    st.subheader("Sentiment Overview")
 
     sent = fetch("/analytics/sentiment-summary")
     if sent:
@@ -157,7 +157,7 @@ if page == "Overview":
 # ------------------ DAILY SENTIMENT ------------------
 # ------------------ DAILY SENTIMENT ------------------
 if page == "Daily Sentiment":
-    st.subheader("📅 Daily Sentiment Trend")
+    st.subheader("Daily Sentiment Trend")
 
     # Use the SAME query params as the rest of the dashboard
     daily = fetch("/analytics/daily-sentiment")
@@ -183,7 +183,7 @@ if page == "Daily Sentiment":
 
 # ------------------ KEYWORDS ------------------
 if page == "Keywords":
-    st.subheader("🔍 Most Common Keywords")
+    st.subheader("Most Common Keywords")
 
     keywords = fetch("/analytics/keyword-frequency")
 
@@ -205,7 +205,7 @@ if page == "Keywords":
 
 # ------------------ SOURCES ------------------
 if page == "Sources":
-    st.subheader("📰 Sentiment by News Source")
+    st.subheader("Sentiment by News Source")
 
     source_data = fetch("/analytics/source-sentiment")
 
@@ -232,7 +232,7 @@ if page == "Sources":
 
 # ------------------ ENTITIES ------------------
 if page == "Entities":
-    st.subheader("🏷️ Trending Entities")
+    st.subheader("Trending Entities")
 
     ENTITY_COLORS = {
         "person": "#FF6B6B",
