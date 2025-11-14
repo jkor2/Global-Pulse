@@ -1,10 +1,7 @@
 FROM python:3.11-slim
-
 WORKDIR /code
-
-COPY requirements.txt .
+RUN apt-get update && apt-get install -y build-essential
+COPY . /code
 RUN pip install --no-cache-dir -r requirements.txt
-
-COPY . .
-
+ENV PYTHONPATH="/code"
 CMD ["python", "app/workers/sentiment_worker.py"]
