@@ -1,0 +1,16 @@
+TECH_FEEDS = [
+    "https://www.theverge.com/rss/index.xml",
+    "http://feeds.wired.com/wired/index",
+    "http://feeds.feedburner.com/TechCrunch/",
+    "https://rss.nytimes.com/services/xml/rss/nyt/Technology.xml",
+    "http://www.npr.org/rss/rss.php?id=1019",
+    "https://www.theverge.com/rss/5g/index.xml",
+    "https://techcrunch.com/tag/5g/feed/",
+    "https://www.mobileworldlive.com/tag/5g/feed",
+    "https://www.rcrwireless.com/tag/5g/feed",
+    "https://www.electronicsweekly.com/search/5G/feed/rss2",
+    "https://www.5gtechnologyworld.com/feed/",
+    "https://www.theverge.com/rss/index.xml",
+    "http://feeds.feedburner.com/TechCrunch/",
+    "http://feeds.wired.com/wired/index",
+]

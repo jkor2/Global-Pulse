@@ -1,0 +1,16 @@
+POLITICS_FEEDS = [
+    "https://rss.nytimes.com/services/xml/rss/nyt/Politics.xml",
+    "http://feeds.nytimes.com/nyt/rss/Politics",
+    "http://www.npr.org/rss/rss.php?id=1014",
+    "https://www.politico.com/rss/politicopicks.xml",
+    "https://apnews.com/politics.rss",
+    "https://www.foxnews.com/politics/index.rss",
+    "https://www.realclearpolitics.com/index.xml",
+    "https://slate.com/feeds/news-and-politics",
+    "https://foreignpolicy.com/feed",
+    "https://www.nationalreview.com/feed",
+    "https://www.theatlantic.com/feed/topics/politics/",
+    "https://thehill.com/feed",
+    "https://www.nbcnews.com/politics",
+    "https://www.cbsnews.com/latest/rss/politics",
+]

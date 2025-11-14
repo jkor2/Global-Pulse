@@ -7,9 +7,26 @@ from app.db.models import Article
 from app.services.sentiment_service import process_sentiment_for_article
 from app.services.entity_service import process_entities_for_article
 
+def wait_for_database():
+    import time
+    from sqlalchemy import text
+    from app.db.database import SessionLocal
+
+    while True:
+        try:
+            db = SessionLocal()
+            db.execute(text("SELECT 1"))
+            db.close()
+            print("Database is ready.")
+            return
+        except Exception as e:
+            print(f"Database not ready yet... {e}")
+            time.sleep(3)
+
 SLEEP_SECONDS = 10  
 
 def run_worker():
+    wait_for_database()
     """Continuously process articles missing sentiment."""
 
     while True:
