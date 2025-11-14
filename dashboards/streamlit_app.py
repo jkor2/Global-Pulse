@@ -155,10 +155,12 @@ if page == "Overview":
         st.error("Could not load sentiment summary.")
 
 # ------------------ DAILY SENTIMENT ------------------
+# ------------------ DAILY SENTIMENT ------------------
 if page == "Daily Sentiment":
     st.subheader("📅 Daily Sentiment Trend")
 
-    daily = fetch("/analytics/daily-sentiment?after=2025-11-01")
+    # Use the SAME query params as the rest of the dashboard
+    daily = fetch("/analytics/daily-sentiment")
 
     if daily:
         rows = [{"date": d, **vals} for d, vals in daily.items()]

@@ -39,7 +39,7 @@ services:
     container_name: globalpulse_rss_worker
     build:
       context: .
-      dockerfile: infrastructure/docker/worker.Dockerfile
+      dockerfile: infrastructure/docker/rss.Dockerfile
     command: python app/workers/rss_worker.py
     volumes:
       - .:/code

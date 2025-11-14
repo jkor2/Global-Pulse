@@ -4,22 +4,20 @@ import feedparser
 from datetime import datetime
 from bs4 import BeautifulSoup
 import traceback
-from app.scrapers.rss_feeds import RSS_FEEDS
+from app.scrapers.rss_loader import load_feeds
 from app.db.database import SessionLocal
 from app.db.models import Article
 
 
 def clean_html(text: str) -> str:
-    """Remove HTML tags from summaries/content."""
     if not text:
         return ""
     return BeautifulSoup(text, "html.parser").get_text(" ", strip=True)
 
 
-def parse_published(entry) -> datetime | None:
-    """Convert RSS published time into datetime."""
+def parse_published(entry):
     try:
-        if hasattr(entry, "published_parsed") and entry.published_parsed:
+        if getattr(entry, "published_parsed", None):
             return datetime(*entry.published_parsed[:6])
     except:
         pass
@@ -27,41 +25,39 @@ def parse_published(entry) -> datetime | None:
 
 
 def scrape_rss(custom_feeds=None):
-    """
-    Scrape all starter RSS feeds, insert new articles into the DB,
-    and return a list of new Article objects.
-    """
-
-    feeds = custom_feeds or RSS_FEEDS
+    feeds = custom_feeds or load_feeds()
     db = SessionLocal()
     new_articles = []
 
     try:
         for category, feed_urls in feeds.items():
+            print(f"[SCRAPER] Category: {category} — {len(feed_urls)} feeds")
+
             for url in feed_urls:
                 try:
                     feed = feedparser.parse(url)
                 except Exception as e:
-                    print(f"[ERROR] Exception reading feed: {url} -> {e}")
+                    print(f"[ERROR] Could not load feed: {url} -> {e}")
                     traceback.print_exc()
                     continue
 
-                if hasattr(feed, "bozo") and feed.bozo:
+                if getattr(feed, "bozo", False):
                     print(f"[WARN] Feed parse error: {url} -> {feed.bozo_exception}")
 
                 for entry in getattr(feed, "entries", []):
                     try:
                         title = entry.get("title")
                         link = entry.get("link")
-                        summary = clean_html(entry.get("summary", ""))
-                        published_dt = parse_published(entry)
+
                         if not link:
                             continue
 
-                        # Avoid duplicates
-                        exists = db.query(Article).filter(Article.url == link).first()
-                        if exists:
+                        existing = db.query(Article).filter(Article.url == link).first()
+                        if existing:
                             continue
+
+                        summary = clean_html(entry.get("summary", ""))
+                        published_dt = parse_published(entry)
 
                         article = Article(
                             title=title,
@@ -75,15 +71,19 @@ def scrape_rss(custom_feeds=None):
                         db.commit()
                         db.refresh(article)
                         new_articles.append(article)
+
                     except Exception as e:
-                        print(f"[ERROR] Failed processing entry in {url}: {e}")
+                        print(f"[ERROR] Failed processing entry from {url}: {e}")
                         traceback.print_exc()
                         db.rollback()
                         continue
+
         return new_articles
+
     finally:
         db.close()
 
+
 if __name__ == "__main__":
-    results = scrape_rss()
-    print(f"Scraped {len(results)} new articles.")
+    r = scrape_rss()
+    print(f"Scraped {len(r)} new articles.")

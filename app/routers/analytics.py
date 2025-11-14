@@ -7,6 +7,8 @@ import re
 from datetime import datetime
 from datetime import timedelta
 
+GLOBAL_CUTOFF = date(2025, 10, 1)
+
 from app.db.database import get_db
 from app.db.models import Article, SentimentResult, ArticleEntity
 
@@ -64,6 +66,7 @@ def daily_sentiment(after: str = None, days: int = None, db: Session = Depends(g
 
 
 STOPWORDS = set("""
+                will first content post time need cent people like other when appeared best features million free high plan help country back billion make tool online years
 a an the and or but if while then than
 of for with without within
 to from in on at by about into onto upon
@@ -97,6 +100,7 @@ company companies firm firms organization organizations
 market markets
 global international world national
 industry industries sector sectors
+single game review read
 """.split())
 
 
@@ -107,14 +111,21 @@ def extract_keywords(text: str):
 
 
 def resolve_cutoff(after: str | None, days: int | None):
+    user_cutoff = None
+
     if after:
         try:
-            return datetime.strptime(after, "%Y-%m-%d").date()
+            user_cutoff = datetime.strptime(after, "%Y-%m-%d").date()
         except:
-            return None
+            pass
+
     if days:
-        return date.today() - timedelta(days=days)
-    return None
+        user_cutoff = date.today() - timedelta(days=days)
+
+    if user_cutoff:
+        return max(user_cutoff, GLOBAL_CUTOFF)
+
+    return GLOBAL_CUTOFF
 
 
 @router.get("/keyword-frequency")
