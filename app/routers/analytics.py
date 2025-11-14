@@ -1,18 +1,16 @@
-# app/routers/analytics.py
-
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 from sqlalchemy import func, cast, Date
-from app.db.database import get_db
-from app.db.models import SentimentResult, Article
-import re
-from collections import Counter
 from datetime import date
+from collections import Counter
+import re
 
+from app.db.database import get_db
+from app.db.models import Article, SentimentResult, ArticleEntity
 
 router = APIRouter(prefix="/analytics", tags=["Analytics"])
 
-# Sentiment Summary 
+
 @router.get("/sentiment-summary")
 def sentiment_summary(db: Session = Depends(get_db)):
     total = db.query(func.count(SentimentResult.id)).scalar()
@@ -20,7 +18,6 @@ def sentiment_summary(db: Session = Depends(get_db)):
     negative = db.query(func.count(SentimentResult.id)).filter(SentimentResult.label == "negative").scalar()
     neutral = db.query(func.count(SentimentResult.id)).filter(SentimentResult.label == "neutral").scalar()
     error = db.query(func.count(SentimentResult.id)).filter(SentimentResult.label == "error").scalar()
-
     return {
         "total": total,
         "positive": positive,
@@ -29,30 +26,26 @@ def sentiment_summary(db: Session = Depends(get_db)):
         "error": error
     }
 
-# Top Sources 
+
 @router.get("/top-sources")
 def top_sources(db: Session = Depends(get_db)):
     results = (
         db.query(Article.source, func.count(Article.id).label("count"))
-          .group_by(Article.source)
-          .order_by(func.count(Article.id).desc())
-          .all()
+        .group_by(Article.source)
+        .order_by(func.count(Article.id).desc())
+        .all()
     )
+    return [{"source": s, "count": c} for s, c in results]
 
-    return [{"source": r[0], "count": r[1]} for r in results]
 
-
-# Daily trend
 @router.get("/daily-sentiment")
 def daily_sentiment(db: Session = Depends(get_db)):
     cutoff = date(2025, 11, 1)
-
-    # Group sentiment by DATE(article.published_at)
     results = (
         db.query(
             cast(Article.published_at, Date).label("day"),
             SentimentResult.label,
-            func.count(SentimentResult.id).label("count")
+            func.count(SentimentResult.id)
         )
         .join(SentimentResult, SentimentResult.article_id == Article.id)
         .filter(cast(Article.published_at, Date) >= cutoff)
@@ -60,27 +53,22 @@ def daily_sentiment(db: Session = Depends(get_db)):
         .order_by("day")
         .all()
     )
-
     trend = {}
-
     for day, label, count in results:
-        day_str = str(day)
-        if day_str not in trend:
-            trend[day_str] = {"positive": 0, "negative": 0, "neutral": 0, "error": 0}
-
-        trend[day_str][label] = count
-
+        ds = str(day)
+        if ds not in trend:
+            trend[ds] = {"positive": 0, "negative": 0, "neutral": 0, "error": 0}
+        trend[ds][label] = count
     return trend
 
 
-# Keyword freq
 STOPWORDS = set("""
 a an the and or but if while then than
 of for with without within
 to from in on at by about into onto upon
 is was are were be been being
 it this that these those
-you your yours we our us they them their 
+you your yours we our us they them their
 as so just very really
 what which who whom whose
 also too much many most
@@ -89,20 +77,20 @@ do does did doing done
 has have had having
 not no yes
 all any each every some
-there here after before during 
-such though although however still 
-because since until 
-over under again once even only 
+there here after before during
+such though although however still
+because since until
+over under again once even only
 more less few several
 out up down off
-i me my mine 
-he him his she her hers 
+i me my mine
+he him his she her hers
 one two three four five
 really actually basically literally kinda sort maybe probably
-new latest update report reports reporting 
-breaking developing announced announcement 
+new latest update report reports reporting
+breaking developing announced announcement
 news article media sources source experts
-today yesterday tomorrow week month year 
+today yesterday tomorrow week month year
 said says saying according
 company companies firm firms organization organizations
 market markets
@@ -110,28 +98,26 @@ global international world national
 industry industries sector sectors
 """.split())
 
-def extract_keywords(text):
+
+def extract_keywords(text: str):
     text = text.lower()
     words = re.findall(r"[a-zA-Z]+", text)
     return [w for w in words if w not in STOPWORDS and len(w) > 3]
 
+
 @router.get("/keyword-frequency")
 def keyword_frequency(db: Session = Depends(get_db)):
     articles = db.query(Article).all()
-
     all_words = []
-
     for a in articles:
         if a.title:
             all_words.extend(extract_keywords(a.title))
         if a.content:
             all_words.extend(extract_keywords(a.content))
-
     freq = Counter(all_words).most_common(50)
-
     return [{"word": w, "count": c} for w, c in freq]
 
-# Sentiment by source 
+
 @router.get("/source-sentiment")
 def source_sentiment(db: Session = Depends(get_db)):
     results = (
@@ -144,12 +130,91 @@ def source_sentiment(db: Session = Depends(get_db)):
         .group_by(Article.source, SentimentResult.label)
         .all()
     )
-
-    response = {}
-
+    data = {}
     for source, label, count in results:
-        if source not in response:
-            response[source] = {"positive": 0, "negative": 0, "neutral": 0, "error": 0}
-        response[source][label] = count
+        if source not in data:
+            data[source] = {"positive": 0, "negative": 0, "neutral": 0, "error": 0}
+        data[source][label] = count
+    return data
 
-    return response
+
+@router.get("/top-entities")
+def top_entities(limit: int = 25, db: Session = Depends(get_db)):
+    results = (
+        db.query(
+            ArticleEntity.entity,
+            ArticleEntity.entity_type,
+            func.count(ArticleEntity.id)
+        )
+        .group_by(ArticleEntity.entity, ArticleEntity.entity_type)
+        .order_by(func.count(ArticleEntity.id).desc())
+        .limit(limit)
+        .all()
+    )
+    return [{"entity": e, "type": t, "count": c} for e, t, c in results]
+
+
+@router.get("/entity-trend/{entity_name}")
+def entity_trend(entity_name: str, db: Session = Depends(get_db)):
+    results = (
+        db.query(
+            cast(ArticleEntity.created_at, Date).label("day"),
+            func.count(ArticleEntity.id)
+        )
+        .filter(ArticleEntity.entity.ilike(f"%{entity_name}%"))
+        .group_by("day")
+        .order_by("day")
+        .all()
+    )
+    return {str(day): count for day, count in results}
+
+
+@router.get("/entity-sentiment/{entity_name}")
+def entity_sentiment(entity_name: str, db: Session = Depends(get_db)):
+    results = (
+        db.query(
+            SentimentResult.label,
+            func.count(SentimentResult.id)
+        )
+        .join(Article, Article.id == SentimentResult.article_id)
+        .join(ArticleEntity, ArticleEntity.article_id == Article.id)
+        .filter(ArticleEntity.entity.ilike(f"%{entity_name}%"))
+        .group_by(SentimentResult.label)
+        .all()
+    )
+    summary = {"positive": 0, "negative": 0, "neutral": 0, "error": 0}
+    for label, count in results:
+        summary[label] = count
+    return summary
+
+
+@router.get("/article/{article_id}/entities")
+def article_entities(article_id: int, db: Session = Depends(get_db)):
+    results = (
+        db.query(
+            ArticleEntity.entity,
+            ArticleEntity.entity_type,
+            ArticleEntity.created_at
+        )
+        .filter(ArticleEntity.article_id == article_id)
+        .all()
+    )
+    return [{"entity": e, "type": t, "date": str(d)} for e, t, d in results]
+
+
+@router.get("/trending-entities")
+def trending_entities(days: int = 7, limit: int = 20, db: Session = Depends(get_db)):
+    cutoff = date.today().toordinal() - days
+    results = (
+        db.query(
+            ArticleEntity.entity,
+            ArticleEntity.entity_type,
+            func.count(ArticleEntity.id)
+        )
+        .filter(cast(ArticleEntity.created_at, Date) >= date.fromordinal(cutoff))
+        .group_by(ArticleEntity.entity, ArticleEntity.entity_type)
+        .order_by(func.count(ArticleEntity.id).desc())
+        .limit(limit)
+        .all()
+    )
+    return [{"entity": e, "type": t, "count": c} for e, t, c in results]

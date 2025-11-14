@@ -18,6 +18,7 @@ class Article(Base):
 
     # relationship to sentiment table
     sentiment = relationship("SentimentResult", back_populates="article", uselist=False)
+    entities = relationship( "ArticleEntity", back_populates="article", cascade="all, delete-orphan")
 
 
 class SentimentResult(Base):
@@ -30,3 +31,15 @@ class SentimentResult(Base):
     created_at = Column(DateTime, default=datetime.utcnow)
 
     article = relationship("Article", back_populates="sentiment")
+
+class ArticleEntity(Base):
+    __tablename__ = "article_entities"
+
+    id = Column(Integer, primary_key=True, index=True)
+    article_id = Column(Integer, ForeignKey("articles.id", ondelete="CASCADE"))
+
+    entity = Column(String(255), index=True)
+    entity_type = Column(String(50), index=True)  # person, org, location, product
+    created_at = Column(DateTime, default=datetime.utcnow, index=True)
+
+    article = relationship("Article", back_populates="entities")
