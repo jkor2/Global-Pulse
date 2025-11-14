@@ -1,6 +1,8 @@
 from fastapi import FastAPI
 from app.db.database import Base, engine
 from app.db import models
+from app.routers.analytics import router as analytics_router
+
 
 # Create DB tables on startup
 Base.metadata.create_all(bind=engine)
@@ -14,3 +16,6 @@ app = FastAPI(
 @app.get("/health")
 def health_check():
     return {"status": "ok", "message": "API is running"}
+
+
+app.include_router(analytics_router)
