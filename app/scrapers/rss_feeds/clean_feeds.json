@@ -1,0 +1,485 @@
+{
+  "ARTIFICIAL_INTELLIGENCE_RSS_FEEDS_FEEDS": [
+    "https://arstechnica.com/ai/feed/",
+    "https://news.microsoft.com/source/topics/ai/feed/",
+    "https://news.mit.edu/rss/topic/artificial-intelligence2",
+    "https://techcrunch.com/category/artificial-intelligence/feed/",
+    "https://www.nytimes.com/svc/collections/v1/publish/https://www.nytimes.com/spotlight/artificial-intelligence/rss.xml",
+    "https://www.theguardian.com/technology/artificialintelligenceai/rss",
+    "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
+    "https://www.wired.com/feed/tag/ai/latest/rss"
+  ],
+  "AIRLINE_RSS_FEEDS_FEEDS": [
+    "https://airlineweekly.skift.com/feed/"
+  ],
+  "ADTECH_RSS_FEEDS_FEEDS": [
+    "https://techcrunch.com/tag/advertising-tech/feed/"
+  ],
+  "AUSTRALIAN_POLITICS_RSS_FEEDS_FEEDS": [
+    "https://www.abc.net.au/news/feed/51120/rss.xml",
+    "https://www.theguardian.com/australia-news/australian-politics/rss"
+  ],
+  "ADELAIDE_RSS_FEEDS_FEEDS": [
+    "https://www.abc.net.au/news/feed/8057540/rss.xml"
+  ],
+  "ASIA_BUSINESS_RSS_FEEDS_FEEDS": [
+    "https://www.abconnexions.org/blog-feed.xml"
+  ],
+  "AIRSOFT_RSS_FEEDS_FEEDS": [
+    "https://www.popularairsoft.com/rss.xml"
+  ],
+  "ARS_TECHNICA_RSS_FEEDS_FEEDS": [
+    "https://arstechnica.com/ai/feed/",
+    "https://arstechnica.com/cars/feed/",
+    "https://arstechnica.com/culture/feed/",
+    "https://arstechnica.com/gadgets/feed/",
+    "https://arstechnica.com/gaming/feed/",
+    "https://arstechnica.com/health/feed/",
+    "https://arstechnica.com/information-technology/feed/",
+    "https://arstechnica.com/science/feed/",
+    "https://arstechnica.com/security/feed/",
+    "https://arstechnica.com/space/feed/",
+    "https://arstechnica.com/tech-policy/feed/",
+    "https://feeds.arstechnica.com/arstechnica/apple",
+    "https://feeds.arstechnica.com/arstechnica/index"
+  ],
+  "AIOPS_RSS_FEEDS_FEEDS": [
+    "https://www.moogsoft.com/feed/"
+  ],
+  "AIR_TRAFFIC_CONTROL_RSS_FEEDS_FEEDS": [
+    "https://www.nytimes.com/svc/collections/v1/publish/https://www.nytimes.com/topic/subject/air-traffic-control/rss.xml"
+  ],
+  "AUSTRIA_CRYPTOCURRENCY_RSS_FEEDS_FEEDS": [
+    "https://abc-research.at/feed/"
+  ],
+  "BUSINESS_RSS_FEEDS_FEEDS": [
+    "https://techcrunch.com/feed/",
+    "https://www.bloomberg.com/professional/feed/",
+    "https://www.theguardian.com/business/series/guardian-business-live/rss"
+  ],
+  "BONSAI_RSS_FEEDS_FEEDS": [
+    "http://vocbs.blogspot.com/feeds/posts/default"
+  ],
+  "BUSINESS_NEWS_RSS_FEEDS_FEEDS": [
+    "https://finance.yahoo.com/news/rssindex",
+    "https://prod-qt-images.s3.amazonaws.com/production/bloombergquint/feed.xml"
+  ],
+  "BIG_DATA_RSS_FEEDS_FEEDS": [
+    "https://www.scnsoft.com/blog/category/big-data/atom"
+  ],
+  "BOSTON_FINANCE_RSS_FEEDS_FEEDS": [
+    "https://www.welchforbes.com/insights/feed/"
+  ],
+  "BIOECONOMY_RSS_FEEDS_FEEDS": [
+    "https://ilbioeconomista.com/feed/"
+  ],
+  "BUSINESS_ETHICS_RSS_FEEDS_FEEDS": [
+    "https://www.theguardian.com/business/ethicalbusiness/rss"
+  ],
+  "CRYPTOCURRENCY_RSS_FEEDS_FEEDS": [
+    "https://cointelegraph.com/rss"
+  ],
+  "CYBER_SECURITY_RSS_FEEDS_FEEDS": [
+    "https://news.mit.edu/topic/mitcyber-security-rss.xml",
+    "https://techcrunch.com/tag/cybersecurity/feed/",
+    "https://www.nytimes.com/svc/collections/v1/publish/https://www.nytimes.com/spotlight/cybersecurity/rss.xml",
+    "https://www.scnsoft.com/blog/category/information-security/atom",
+    "https://www.theguardian.com/technology/data-computer-security/rss",
+    "https://www.theverge.com/rss/cyber-security/index.xml"
+  ],
+  "COCKTAIL_RSS_FEEDS_FEEDS": [
+    "https://homebars.barinacraft.com/rss"
+  ],
+  "CRYPTOCURRENCY_NEWS_RSS_FEEDS_FEEDS": [
+    "https://cointelegraph.com/rss"
+  ],
+  "CALIFORNIA_BUSINESS_RSS_FEEDS_FEEDS": [
+    "https://techcrunch.com/feed/"
+  ],
+  "COMPUTER_SCIENCE_RSS_FEEDS_FEEDS": [
+    "https://news.mit.edu/rss/topic/computers"
+  ],
+  "CALIFORNIA_POLITICS_RSS_FEEDS_FEEDS": [
+    "https://www.nbcbayarea.com/news/politics/feed/",
+    "https://www.nbclosangeles.com/news/politics/feed/"
+  ],
+  "CYBER_SECURITY_NEWS_RSS_FEEDS_FEEDS": [
+    "https://news.mit.edu/topic/mitcyber-security-rss.xml",
+    "https://techcrunch.com/tag/cybersecurity/feed/",
+    "https://www.nytimes.com/svc/collections/v1/publish/https://www.nytimes.com/spotlight/cybersecurity/rss.xml"
+  ],
+  "CALIFORNIA_TECHNOLOGY_RSS_FEEDS_FEEDS": [
+    "https://techcrunch.com/feed/"
+  ],
+  "CRYPTOGRAPHY_RSS_FEEDS_FEEDS": [
+    "https://cointelegraph.com/rss/tag/cryptography",
+    "https://news.mit.edu/rss/topic/cryptography",
+    "https://www.theguardian.com/technology/encryption/rss"
+  ],
+  "CYCLE_TRAINING_RSS_FEEDS_FEEDS": [
+    "https://cycling.mit.edu/blog/category/training/feed/"
+  ],
+  "CBS_STATISTICS_NETHERLANDS_RSS_FEEDS_FEEDS": [
+    "https://www.cbs.nl/en-gb/rss-feeds/all-news-items",
+    "https://www.cbs.nl/en-gb/rss-feeds/arbeid-en-inkomen",
+    "https://www.cbs.nl/en-gb/rss-feeds/arbeid-en-sociale-zekerheid",
+    "https://www.cbs.nl/en-gb/rss-feeds/bedrijven",
+    "https://www.cbs.nl/en-gb/rss-feeds/bevolking",
+    "https://www.cbs.nl/en-gb/rss-feeds/bouwen-en-wonen",
+    "https://www.cbs.nl/en-gb/rss-feeds/economie",
+    "https://www.cbs.nl/en-gb/rss-feeds/gezondheid-en-welzijn",
+    "https://www.cbs.nl/en-gb/rss-feeds/handel-en-horeca",
+    "https://www.cbs.nl/en-gb/rss-feeds/industrie-en-energie",
+    "https://www.cbs.nl/en-gb/rss-feeds/inkomen-en-bestedingen",
+    "https://www.cbs.nl/en-gb/rss-feeds/internationale-handel",
+    "https://www.cbs.nl/en-gb/rss-feeds/landbouw",
+    "https://www.cbs.nl/en-gb/rss-feeds/maatschappij",
+    "https://www.cbs.nl/en-gb/rss-feeds/macro-economie",
+    "https://www.cbs.nl/en-gb/rss-feeds/natuur-en-milieu",
+    "https://www.cbs.nl/en-gb/rss-feeds/onderwijs",
+    "https://www.cbs.nl/en-gb/rss-feeds/overheid-en-politiek",
+    "https://www.cbs.nl/en-gb/rss-feeds/prijzen",
+    "https://www.cbs.nl/en-gb/rss-feeds/veiligheid-en-recht",
+    "https://www.cbs.nl/en-gb/rss-feeds/verkeer-en-vervoer",
+    "https://www.cbs.nl/en-gb/rss-feeds/vrije-tijd-en-cultuur"
+  ],
+  "CHINA_ECONOMY_RSS_FEEDS_FEEDS": [
+    "https://www.economist.com/china/rss.xml"
+  ],
+  "CONNECTICUT_POLITICS_RSS_FEEDS_FEEDS": [
+    "https://ctnewsjunkie.com/category/politics/feed/",
+    "https://www.nbcconnecticut.com/news/politics/feed/"
+  ],
+  "DUBAI_BUSINESS_RSS_FEEDS_FEEDS": [
+    "https://www.creationbc.com/feed/"
+  ],
+  "DATA_CENTER_RSS_FEEDS_FEEDS": [
+    "https://dcnnmagazine.com/feed/"
+  ],
+  "DAILY_EXPRESS_RSS_FEEDS_FEEDS": [
+    "https://www.express.co.uk/posts/rss/128/nature"
+  ],
+  "DATA_ANALYTICS_AND_DATA_MINING_RSS_FEEDS_FEEDS": [
+    "https://www.scnsoft.com/blog/category/data-analytics/atom"
+  ],
+  "DATA_JOURNALISM_RSS_FEEDS_FEEDS": [
+    "https://www.nytimes.com/svc/collections/v1/publish/https://www.nytimes.com/section/upshot/rss.xml"
+  ],
+  "DENMARK_BUSINESS_RSS_FEEDS_FEEDS": [
+    "https://cbds.cbs.dk/feed/"
+  ],
+  "DATA_DRIVEN_MARKETING_RSS_FEEDS_FEEDS": [
+    "https://blueshift.com/feed/"
+  ],
+  "ENTERPRISE_TECHNOLOGY_RSS_FEEDS_FEEDS": [
+    "https://www.linksft.com/blog-feed.xml"
+  ],
+  "EUROPEAN_TECHNOLOGY_RSS_FEEDS_FEEDS": [
+    "https://techcrunch.com/region/europe/feed/"
+  ],
+  "EMERGING_MARKETS_RSS_FEEDS_FEEDS": [
+    "https://techcrunch.com/tag/emerging-markets/feed/"
+  ],
+  "EVENT_TECHNOLOGY_RSS_FEEDS_FEEDS": [
+    "https://meetings.skift.com/feed/"
+  ],
+  "FINTECH_RSS_FEEDS_FEEDS": [
+    "https://techcrunch.com/tag/fintech/feed/",
+    "https://www.clarusft.com/feed/",
+    "https://www.forbes.com/sites/tomgroenfeldt/feed/"
+  ],
+  "FIFA_WOMENS_WORLD_CUP_2023_RSS_FEEDS_FEEDS": [
+    "https://sports.yahoo.com/soccer/world-cup/rss/",
+    "https://www.nytimes.com/svc/collections/v1/publish/https://www.nytimes.com/news-event/womens-world-cup/rss.xml"
+  ],
+  "FAIRFIELD_COUNTY_RSS_FEEDS_FEEDS": [
+    "https://abc7ny.com/feed/"
+  ],
+  "FLORIDA_POLITICS_RSS_FEEDS_FEEDS": [
+    "https://www.nbcmiami.com/news/politics/feed/"
+  ],
+  "FOOD_SECURITY_RSS_FEEDS_FEEDS": [
+    "https://www.theguardian.com/global-development/food-security/rss"
+  ],
+  "FRANCE_CRYPTO_RSS_FEEDS_FEEDS": [
+    "https://fr.cointelegraph.com/rss"
+  ],
+  "FIFA_WORLD_CUP_RSS_FEEDS_FEEDS": [
+    "https://www.theguardian.com/football/world-cup-2018/rss"
+  ],
+  "GERMANY_TECHNOLOGY_RSS_FEEDS_FEEDS": [
+    "https://blogs.mulesoft.com/feed/"
+  ],
+  "GLOBAL_WARMING_RSS_FEEDS_FEEDS": [
+    "https://www.nytimes.com/svc/collections/v1/publish/https://www.nytimes.com/section/climate/rss.xml"
+  ],
+  "GREEN_TECHNOLOGY_RSS_FEEDS_FEEDS": [
+    "https://techcrunch.com/category/climate/feed/"
+  ],
+  "GOVERNMENT_TECHNOLOGY_RSS_FEEDS_FEEDS": [
+    "https://devblogs.microsoft.com/azuregov/feed/"
+  ],
+  "GRAND_PRAIRIE_NEWS_RSS_FEEDS_FEEDS": [
+    "https://www.nbcdfw.com/tag/grand-prairie/feed/"
+  ],
+  "HEALTHCARE_TECHNOLOGY_RSS_FEEDS_FEEDS": [
+    "https://www.scnsoft.com/blog/category/healthcare-it/atom"
+  ],
+  "HAIR_TRANSPLANT_RSS_FEEDS_FEEDS": [
+    "https://ugraft.com/feed/"
+  ],
+  "HOMELAND_SECURITY_RSS_FEEDS_FEEDS": [
+    "https://www.theguardian.com/us-news/us-national-security/rss"
+  ],
+  "HAWAII_NEWS_RSS_FEEDS_FEEDS": [
+    "https://www.nytimes.com/svc/collections/v1/publish/https://www.nytimes.com/topic/destination/hawaii/rss.xml"
+  ],
+  "HOT_AIR_BALLOON_RSS_FEEDS_FEEDS": [
+    "https://nvaloft.com/feed/"
+  ],
+  "HONG_KONG_TECHNOLOGY_RSS_FEEDS_FEEDS": [
+    "https://techcrunch.com/tag/hong-kong/feed/"
+  ],
+  "HAWAII_FOOTBALL_RSS_FEEDS_FEEDS": [
+    "https://www.nytimes.com/athletic/rss/college-football/hawaii-rainbow-warriors-college-football/"
+  ],
+  "INNOVATION_RSS_FEEDS_FEEDS": [
+    "https://news.microsoft.com/innovation-stories/feed/",
+    "https://news.mit.edu/topic/mitinnovation-rss.xml"
+  ],
+  "INTERNATIONAL_RELATIONS_RSS_FEEDS_FEEDS": [
+    "https://www.nytimes.com/svc/collections/v1/publish/http://www.nytimes.com/topic/subject/international-relations/rss.xml"
+  ],
+  "INDIANA_POLITICS_RSS_FEEDS_FEEDS": [
+    "https://cbs4indy.com/news/politics/feed/"
+  ],
+  "ILLINOIS_POLITICS_RSS_FEEDS_FEEDS": [
+    "https://www.nbcchicago.com/news/politics/feed/"
+  ],
+  "INTERNATIONAL_TRADE_RSS_FEEDS_FEEDS": [
+    "https://www.nytimes.com/svc/collections/v1/publish/https://www.nytimes.com/topic/subject/international-trade-and-world-market-trade-disputes/rss.xml",
+    "https://www.theguardian.com/business/internationaltrade/rss"
+  ],
+  "ITALY_TECHNOLOGY_RSS_FEEDS_FEEDS": [
+    "https://www.wired.it/feed/rss"
+  ],
+  "INDONESIA_TECHNOLOGY_RSS_FEEDS_FEEDS": [
+    "https://techcrunch.com/tag/indonesia/feed/"
+  ],
+  "JAILBREAK_RSS_FEEDS_FEEDS": [
+    "https://blog.elcomsoft.com/tag/jailbreak/feed/"
+  ],
+  "LIBRARY_TECHNOLOGY_RSS_FEEDS_FEEDS": [
+    "https://libraries.mit.edu/news/feed/"
+  ],
+  "LOGITECH_RSS_FEEDS_FEEDS": [
+    "https://www.engadget.com/tag/logitech/rss.xml",
+    "https://www.theverge.com/rss/logitech/index.xml"
+  ],
+  "MACHINE_LEARNING_RSS_FEEDS_FEEDS": [
+    "https://ai.stanford.edu/blog/feed.xml",
+    "https://news.mit.edu/rss/topic/machine-learning"
+  ],
+  "MARKETING_TECH_RSS_FEEDS_FEEDS": [
+    "https://growthshift.com/feed/"
+  ],
+  "MASSACHUSETTS_POLITICS_RSS_FEEDS_FEEDS": [
+    "https://news.mit.edu/topic/mitpolitics-rss.xml"
+  ],
+  "MALAYSIA_BUSINESS_RSS_FEEDS_FEEDS": [
+    "https://www.inft.com.my/blog-feed.xml"
+  ],
+  "MLS_RSS_FEEDS_FEEDS": [
+    "https://feeds.bbci.co.uk/sport/football/us-major-league/rss.xml",
+    "https://sports.yahoo.com/soccer/mls/rss/",
+    "https://www.nytimes.com/athletic/rss/mls/"
+  ],
+  "MEXICO_TECHNOLOGY_RSS_FEEDS_FEEDS": [
+    "https://techcrunch.com/tag/mexico/feed/"
+  ],
+  "MATERIALS_SCIENCE_RSS_FEEDS_FEEDS": [
+    "https://www.nature.com/nmat.rss"
+  ],
+  "MEXICO_PERSONAL_FINANCE_RSS_FEEDS_FEEDS": [
+    "https://forbes.com.mx/dinero/feed/"
+  ],
+  "NEUROSCIENCE_RSS_FEEDS_FEEDS": [
+    "https://mcgovern.mit.edu/news/feed/",
+    "https://news.mit.edu/rss/topic/neuroscience"
+  ],
+  "NETHERLANDS_BUSINESS_RSS_FEEDS_FEEDS": [
+    "https://aabc.nl/feed/"
+  ],
+  "NEW_YORK_FINANCE_RSS_FEEDS_FEEDS": [
+    "https://www.nytimes.com/svc/collections/v1/publish/http://www.nytimes.com/topic/subject/finances/rss.xml"
+  ],
+  "NEW_ORLEANS_SAINTS_RSS_FEEDS_FEEDS": [
+    "https://www.nytimes.com/svc/collections/v1/publish/https://www.nytimes.com/topic/organization/new-orleans-saints/rss.xml",
+    "https://www.theguardian.com/sport/new-orleans-saints/rss"
+  ],
+  "NEW_YORK_POLITICS_RSS_FEEDS_FEEDS": [
+    "https://www.nytimes.com/svc/collections/v1/publish/https://www.nytimes.com/section/politics/rss.xml"
+  ],
+  "NEW_ZEALAND_POLITICS_RSS_FEEDS_FEEDS": [
+    "https://www.theguardian.com/world/new-zealand-politics/rss"
+  ],
+  "NORWAY_TECHNOLOGY_RSS_FEEDS_FEEDS": [
+    "https://abcb.no/feed/"
+  ],
+  "POLITICAL_SCIENCE_RSS_FEEDS_FEEDS": [
+    "https://news.mit.edu/rss/topic/political-science"
+  ],
+  "PAKISTAN_TECHNOLOGY_RSS_FEEDS_FEEDS": [
+    "https://pakwired.com/feed/"
+  ],
+  "PORTLAND_TRAIL_BLAZERS_RSS_FEEDS_FEEDS": [
+    "https://sports.yahoo.com/nba/teams/por/rss/"
+  ],
+  "RETAIL_RSS_FEEDS_FEEDS": [
+    "https://www.theguardian.com/business/retail/rss"
+  ],
+  "REAL_ESTATE_TECHNOLOGY_RSS_FEEDS_FEEDS": [
+    "https://www.labcoatagents.com/blog/category/technology/feed/"
+  ],
+  "SCIENCE_RSS_FEEDS_FEEDS": [
+    "https://arstechnica.com/science/feed/",
+    "https://news.yahoo.com/rss/science",
+    "https://www.cbsnews.com/latest/rss/science",
+    "https://www.dnatured.com/feed/",
+    "https://www.nytimes.com/svc/collections/v1/publish/https://www.nytimes.com/international/section/science/rss.xml",
+    "https://www.theguardian.com/science/rss",
+    "https://www.wired.com/category/science/feed"
+  ],
+  "SMALL_BUSINESS_RSS_FEEDS_FEEDS": [
+    "https://www.forbesburton.com/feed",
+    "https://www.theguardian.com/small-business-network/rss"
+  ],
+  "SUPPLY_CHAIN_RSS_FEEDS_FEEDS": [
+    "https://abcsupplychain.com/feed/",
+    "https://www.reutersevents.com/supplychain/taxonomy/term/7954/feed"
+  ],
+  "SOCIAL_SCIENCE_RSS_FEEDS_FEEDS": [
+    "https://news.mit.edu/rss/topic/social-sciences",
+    "https://news.mit.edu/topic/mitsocial-sciences-rss.xml",
+    "https://scbsocialscience.org/feed/",
+    "https://www.nytimes.com/svc/collections/v1/publish/http://www.nytimes.com/topic/subject/sociology/rss.xml"
+  ],
+  "SINGAPORE_TECH_RSS_FEEDS_FEEDS": [
+    "https://techcrunch.com/feed/"
+  ],
+  "SPAIN_SPORTS_RSS_FEEDS_FEEDS": [
+    "https://www.theguardian.com/football/barcelona/rss"
+  ],
+  "SCIENCE_MUSEUM_RSS_FEEDS_FEEDS": [
+    "https://nature.ca/en/articles/our-science-blog/feed/"
+  ],
+  "SCIENCE_POLICY_RSS_FEEDS_FEEDS": [
+    "https://www.theguardian.com/science/science-policy/rss"
+  ],
+  "TECH_RSS_FEEDS_FEEDS": [
+    "http://feeds.arstechnica.com/arstechnica/technology-lab",
+    "https://techcrunch.com/feed/",
+    "https://www.engadget.com/rss.xml",
+    "https://www.technologydrift.com/feed/",
+    "https://www.wired.com/feed/rss"
+  ],
+  "TECHNOLOGY_NEWS_RSS_FEEDS_FEEDS": [
+    "https://arstechnica.com/tag/self-driving-cars/feed/",
+    "https://feeds.washingtonpost.com/rss/business/technology",
+    "https://rss.nytimes.com/services/xml/rss/nyt/Technology.xml",
+    "https://techcrunch.com/feed/",
+    "https://www.engadget.com/rss.xml",
+    "https://www.technologydrift.com/feed/",
+    "https://www.theverge.com/rss/index.xml",
+    "https://www.wired.com/feed/rss"
+  ],
+  "TRAVEL_TECHNOLOGY_RSS_FEEDS_FEEDS": [
+    "https://skift.com/travel-technology/feed/"
+  ],
+  "TECHCRUNCH_RSS_FEEDS_FEEDS": [
+    "https://techcrunch.com/category/apps/feed/",
+    "https://techcrunch.com/category/artificial-intelligence/feed/",
+    "https://techcrunch.com/category/biotech-health/feed/",
+    "https://techcrunch.com/category/climate/feed/",
+    "https://techcrunch.com/category/commerce/feed/",
+    "https://techcrunch.com/category/cryptocurrency/feed/",
+    "https://techcrunch.com/category/fintech/feed/",
+    "https://techcrunch.com/category/gadgets/feed/",
+    "https://techcrunch.com/category/gaming/feed/",
+    "https://techcrunch.com/category/hardware/feed/",
+    "https://techcrunch.com/category/privacy/feed/",
+    "https://techcrunch.com/category/robotics/feed/",
+    "https://techcrunch.com/category/security/feed/",
+    "https://techcrunch.com/category/space/feed/",
+    "https://techcrunch.com/category/startups/feed/",
+    "https://techcrunch.com/category/transportation/feed/",
+    "https://techcrunch.com/category/venture/feed/",
+    "https://techcrunch.com/feed/",
+    "https://techcrunch.com/tag/apple/feed/",
+    "https://techcrunch.com/tag/cloud-computing/feed/",
+    "https://techcrunch.com/tag/evs/feed/",
+    "https://techcrunch.com/tag/funding/feed/",
+    "https://techcrunch.com/tag/instagram/feed",
+    "https://techcrunch.com/tag/meta/feed/",
+    "https://techcrunch.com/tag/samsung/feed/",
+    "https://techcrunch.com/tag/tesla/feed/",
+    "https://techcrunch.com/tag/twitter/feed/",
+    "https://techcrunch.com/tag/yahoo/feed/",
+    "https://techcrunch.com/video/feed/"
+  ],
+  "THAI_FOOD_RSS_FEEDS_FEEDS": [
+    "https://www.theguardian.com/food/thai/rss"
+  ],
+  "TRAIL_CAMERA_RSS_FEEDS_FEEDS": [
+    "https://thecomfycabin.com/category/nature/trail-camera/feed/"
+  ],
+  "THAILAND_TECHNOLOGY_RSS_FEEDS_FEEDS": [
+    "https://techcrunch.com/tag/thailand/feed/"
+  ],
+  "UAE_BUSINESS_RSS_FEEDS_FEEDS": [
+    "https://cbs-uae.ae/feed/",
+    "https://www.creationbc.com/feed/"
+  ],
+  "UK_FINANCE_RSS_FEEDS_FEEDS": [
+    "https://www.ft.com/rss/home",
+    "https://www.wired.com/feed/rss"
+  ],
+  "UK_BUSINESS_RSS_FEEDS_FEEDS": [
+    "https://www.theguardian.com/uk/business/rss"
+  ],
+  "UKRAINE_RSS_FEEDS_FEEDS": [
+    "https://www.aljazeera.com/xml/rss/all.xml",
+    "https://www.nytimes.com/svc/collections/v1/publish/https://www.nytimes.com/topic/destination/ukraine/rss.xml"
+  ],
+  "UKRAINE_NEWS_RSS_FEEDS_FEEDS": [
+    "https://www.nytimes.com/svc/collections/v1/publish/https://www.nytimes.com/topic/destination/ukraine/rss.xml"
+  ],
+  "UK_FINTECH_RSS_FEEDS_FEEDS": [
+    "https://www.clarusft.com/feed/"
+  ],
+  "UK_EDUCATIONAL_TECHNOLOGY_RSS_FEEDS_FEEDS": [
+    "https://www.jameskieft.com/blog-feed.xml"
+  ],
+  "WORLD_NEWS_RSS_FEEDS_FEEDS": [
+    "https://bbcstoriesnews.blogspot.com/feeds/posts/default",
+    "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "https://feeds.nbcnews.com/nbcnews/public/news",
+    "https://feeds.washingtonpost.com/rss/world",
+    "https://www.aljazeera.com/xml/rss/all.xml",
+    "https://www.cbsnews.com/latest/rss/world",
+    "https://www.cnbc.com/id/100727362/device/rss/rss.html",
+    "https://www.cnbctv18.com/commonfeeds/v1/cne/rss/world.xml",
+    "https://www.nytimes.com/svc/collections/v1/publish/https://www.nytimes.com/section/world/rss.xml",
+    "https://www.theguardian.com/world/rss"
+  ],
+  "WIRELESS_TECHNOLOGY_RSS_FEEDS_FEEDS": [
+    "https://wirednot.wordpress.com/feed/"
+  ],
+  "WEARABLE_TECHNOLOGY_RSS_FEEDS_FEEDS": [
+    "https://www.theverge.com/rss/wearables/index.xml"
+  ],
+  "WORLD_HEALTH_ORGANIZATION_RSS_FEEDS_FEEDS": [
+    "https://www.nytimes.com/svc/collections/v1/publish/https://www.nytimes.com/topic/organization/world-health-organization/rss.xml",
+    "https://www.theguardian.com/world/world-health-organization/rss"
+  ]
+}
